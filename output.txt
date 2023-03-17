@@ -1,0 +1,457 @@
+[0m[1mdata.aws_availability_zones.azs: Reading...[0m[0m
+[0m[1maws_route53_zone.dev_zone: Refreshing state... [id=Z0856263E13EB1PEK2IW][0m
+[0m[1mdata.aws_iam_role.iam_role: Reading...[0m[0m
+[0m[1maws_cloudwatch_log_group.cloudwatch_log_group: Refreshing state... [id=VPC-FlowLogs-Group-3][0m
+[0m[1maws_vpc.custom_vpc: Refreshing state... [id=vpc-03a6bc60f88ba8c3f][0m
+[0m[1mdata.aws_availability_zones.azs: Read complete after 0s [id=us-east-1][0m
+[0m[1mdata.aws_iam_role.iam_role: Read complete after 0s [id=cloudwatch-logger][0m
+[0m[1maws_internet_gateway.igw: Refreshing state... [id=igw-0361792127d155afd][0m
+[0m[1maws_flow_log.vpc_flow_log: Refreshing state... [id=fl-0d5d5a52172d59ced][0m
+[0m[1maws_route_table.public_rt: Refreshing state... [id=rtb-08362c948e0b71afe][0m
+[0m[1maws_subnet.public_subnet[1]: Refreshing state... [id=subnet-02f3a9bd47a24e366][0m
+[0m[1maws_subnet.public_subnet[2]: Refreshing state... [id=subnet-0ad5b170ca6e7e8b2][0m
+[0m[1maws_subnet.public_subnet[0]: Refreshing state... [id=subnet-0bd297faf3ca5e180][0m
+[0m[1maws_lb_target_group.tg: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051][0m
+[0m[1maws_security_group.sg: Refreshing state... [id=sg-003b53b3264108d0a][0m
+[0m[1maws_route.public_route: Refreshing state... [id=r-rtb-08362c948e0b71afe1080289494][0m
+[0m[1maws_route_table_association.public_rt_association[2]: Refreshing state... [id=rtbassoc-087931658994921d5][0m
+[0m[1maws_route_table_association.public_rt_association[0]: Refreshing state... [id=rtbassoc-0a21ce31bc9af1bf2][0m
+[0m[1maws_route_table_association.public_rt_association[1]: Refreshing state... [id=rtbassoc-054ee5a3b7bdf42d9][0m
+[0m[1maws_lb.lb: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:loadbalancer/app/ALB/292daa6fcbe26883][0m
+[0m[1maws_instance.instance[1]: Refreshing state... [id=i-092844dd14fb150e8][0m
+[0m[1maws_instance.instance[2]: Refreshing state... [id=i-07f4fd3cc2eff0cd3][0m
+[0m[1maws_instance.instance[0]: Refreshing state... [id=i-0f1eb43a4fc3caf35][0m
+[0m[1maws_route53_record.alias_alb_record: Refreshing state... [id=Z0856263E13EB1PEK2IW_dev.ec2deployer.com_A][0m
+[0m[1maws_lb_listener.front_end: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:listener/app/ALB/292daa6fcbe26883/9b1d6efa0d076ced][0m
+[0m[1maws_lb_listener_rule.static: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:listener-rule/app/ALB/292daa6fcbe26883/9b1d6efa0d076ced/d29218fe5bbb35fe][0m
+[0m[1maws_alb_target_group_attachment.tgattachment[2]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457400600000003][0m
+[0m[1maws_alb_target_group_attachment.tgattachment[0]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457371000000002][0m
+[0m[1maws_alb_target_group_attachment.tgattachment[1]: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457454700000004][0m
+[0m[1maws_eip.eip[0]: Refreshing state... [id=eipalloc-0bd6921d9eb266e33][0m
+[0m[1maws_eip.eip[1]: Refreshing state... [id=eipalloc-0c505b156fd95661b][0m
+[0m[1maws_eip.eip[2]: Refreshing state... [id=eipalloc-0923c46463fe02edf][0m
+[0m[1maws_eip_association.eip_association[2]: Refreshing state... [id=eipassoc-0805a926ae55a533d][0m
+[0m[1maws_eip_association.eip_association[0]: Refreshing state... [id=eipassoc-0ac9df1c243943bf4][0m
+[0m[1maws_eip_association.eip_association[1]: Refreshing state... [id=eipassoc-0fcea2a22db268dc1][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place[0m
+[31m-[0m/[32m+[0m destroy and then create replacement[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_alb_target_group_attachment.tgattachment[0][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_alb_target_group_attachment" "tgattachment" {
+      [33m~[0m[0m id               = "arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457371000000002" -> (known after apply)
+      [33m~[0m[0m target_id        = "i-0f1eb43a4fc3caf35" [31m# forces replacement[0m[0m -> (known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_alb_target_group_attachment.tgattachment[1][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_alb_target_group_attachment" "tgattachment" {
+      [33m~[0m[0m id               = "arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457454700000004" -> (known after apply)
+      [33m~[0m[0m target_id        = "i-092844dd14fb150e8" [31m# forces replacement[0m[0m -> (known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_alb_target_group_attachment.tgattachment[2][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_alb_target_group_attachment" "tgattachment" {
+      [33m~[0m[0m id               = "arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457400600000003" -> (known after apply)
+      [33m~[0m[0m target_id        = "i-07f4fd3cc2eff0cd3" [31m# forces replacement[0m[0m -> (known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_eip.eip[0][0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_eip" "eip" {
+        id                   = "eipalloc-0bd6921d9eb266e33"
+      [33m~[0m[0m instance             = "i-0f1eb43a4fc3caf35" -> (known after apply)
+        tags                 = {
+            "Name" = "EIP-0"
+        }
+        [90m# (11 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_eip.eip[1][0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_eip" "eip" {
+        id                   = "eipalloc-0c505b156fd95661b"
+      [33m~[0m[0m instance             = "i-092844dd14fb150e8" -> (known after apply)
+        tags                 = {
+            "Name" = "EIP-1"
+        }
+        [90m# (11 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_eip.eip[2][0m will be updated in-place
+[0m  [33m~[0m[0m resource "aws_eip" "eip" {
+        id                   = "eipalloc-0923c46463fe02edf"
+      [33m~[0m[0m instance             = "i-07f4fd3cc2eff0cd3" -> (known after apply)
+        tags                 = {
+            "Name" = "EIP-2"
+        }
+        [90m# (11 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_eip_association.eip_association[0][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_eip_association" "eip_association" {
+      [33m~[0m[0m id                   = "eipassoc-0ac9df1c243943bf4" -> (known after apply)
+      [33m~[0m[0m instance_id          = "i-0f1eb43a4fc3caf35" [31m# forces replacement[0m[0m -> (known after apply)
+      [33m~[0m[0m network_interface_id = "eni-0743d220b4f881a99" -> (known after apply)
+      [33m~[0m[0m private_ip_address   = "10.0.0.93" -> (known after apply)
+      [33m~[0m[0m public_ip            = "3.223.81.12" -> (known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_eip_association.eip_association[1][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_eip_association" "eip_association" {
+      [33m~[0m[0m id                   = "eipassoc-0fcea2a22db268dc1" -> (known after apply)
+      [33m~[0m[0m instance_id          = "i-092844dd14fb150e8" [31m# forces replacement[0m[0m -> (known after apply)
+      [33m~[0m[0m network_interface_id = "eni-009e1da2e51da7243" -> (known after apply)
+      [33m~[0m[0m private_ip_address   = "10.0.22.83" -> (known after apply)
+      [33m~[0m[0m public_ip            = "44.213.146.122" -> (known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_eip_association.eip_association[2][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_eip_association" "eip_association" {
+      [33m~[0m[0m id                   = "eipassoc-0805a926ae55a533d" -> (known after apply)
+      [33m~[0m[0m instance_id          = "i-07f4fd3cc2eff0cd3" [31m# forces replacement[0m[0m -> (known after apply)
+      [33m~[0m[0m network_interface_id = "eni-07bb5e887dff4b9b6" -> (known after apply)
+      [33m~[0m[0m private_ip_address   = "10.0.32.122" -> (known after apply)
+      [33m~[0m[0m public_ip            = "52.207.146.61" -> (known after apply)
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_instance.instance[0][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_instance" "instance" {
+      [33m~[0m[0m arn                                  = "arn:aws:ec2:us-east-1:191805346255:instance/i-0f1eb43a4fc3caf35" -> (known after apply)
+      [33m~[0m[0m associate_public_ip_address          = true -> (known after apply)
+      [33m~[0m[0m availability_zone                    = "us-east-1a" -> (known after apply)
+      [33m~[0m[0m cpu_core_count                       = 1 -> (known after apply)
+      [33m~[0m[0m cpu_threads_per_core                 = 1 -> (known after apply)
+      [33m~[0m[0m disable_api_termination              = false -> (known after apply)
+      [33m~[0m[0m ebs_optimized                        = false -> (known after apply)
+      [31m-[0m[0m hibernation                          = false [90m-> null[0m[0m
+      [32m+[0m[0m host_id                              = (known after apply)
+      [33m~[0m[0m id                                   = "i-0f1eb43a4fc3caf35" -> (known after apply)
+      [33m~[0m[0m instance_initiated_shutdown_behavior = "stop" -> (known after apply)
+      [33m~[0m[0m instance_state                       = "running" -> (known after apply)
+      [33m~[0m[0m ipv6_address_count                   = 0 -> (known after apply)
+      [33m~[0m[0m ipv6_addresses                       = [] -> (known after apply)
+      [33m~[0m[0m monitoring                           = false -> (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [33m~[0m[0m primary_network_interface_id         = "eni-0743d220b4f881a99" -> (known after apply)
+      [33m~[0m[0m private_dns                          = "ip-10-0-0-93.ec2.internal" -> (known after apply)
+      [33m~[0m[0m private_ip                           = "10.0.0.93" -> (known after apply)
+      [33m~[0m[0m public_dns                           = "ec2-3-223-81-12.compute-1.amazonaws.com" -> (known after apply)
+      [33m~[0m[0m public_ip                            = "3.223.81.12" -> (known after apply)
+      [33m~[0m[0m secondary_private_ips                = [] -> (known after apply)
+      [33m~[0m[0m security_groups                      = [ [31m# forces replacement[0m[0m
+          [32m+[0m[0m "sg-003b53b3264108d0a",
+        ]
+        tags                                 = {
+            "CreatedBy"   = "Terraform"
+            "Environment" = "Test"
+            "Name"        = "Instance-0"
+        }
+      [33m~[0m[0m tenancy                              = "default" -> (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [33m~[0m[0m vpc_security_group_ids               = [
+          [31m-[0m[0m "sg-003b53b3264108d0a",
+        ] -> (known after apply)
+        [90m# (8 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m capacity_reservation_specification {
+          [31m-[0m[0m capacity_reservation_preference = "open" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m credit_specification {
+          [31m-[0m[0m cpu_credits = "standard" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m enclave_options {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m metadata_options {
+          [31m-[0m[0m http_endpoint               = "enabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_put_response_hop_limit = 1 [90m-> null[0m[0m
+          [31m-[0m[0m http_tokens                 = "optional" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m root_block_device {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name           = "/dev/xvda" [90m-> null[0m[0m
+          [31m-[0m[0m encrypted             = false [90m-> null[0m[0m
+          [31m-[0m[0m iops                  = 100 [90m-> null[0m[0m
+          [31m-[0m[0m tags                  = {} [90m-> null[0m[0m
+          [31m-[0m[0m throughput            = 0 [90m-> null[0m[0m
+          [31m-[0m[0m volume_id             = "vol-0e3028af66af1513b" [90m-> null[0m[0m
+          [31m-[0m[0m volume_size           = 8 [90m-> null[0m[0m
+          [31m-[0m[0m volume_type           = "gp2" [90m-> null[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # aws_instance.instance[1][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_instance" "instance" {
+      [33m~[0m[0m arn                                  = "arn:aws:ec2:us-east-1:191805346255:instance/i-092844dd14fb150e8" -> (known after apply)
+      [33m~[0m[0m associate_public_ip_address          = true -> (known after apply)
+      [33m~[0m[0m availability_zone                    = "us-east-1b" -> (known after apply)
+      [33m~[0m[0m cpu_core_count                       = 1 -> (known after apply)
+      [33m~[0m[0m cpu_threads_per_core                 = 1 -> (known after apply)
+      [33m~[0m[0m disable_api_termination              = false -> (known after apply)
+      [33m~[0m[0m ebs_optimized                        = false -> (known after apply)
+      [31m-[0m[0m hibernation                          = false [90m-> null[0m[0m
+      [32m+[0m[0m host_id                              = (known after apply)
+      [33m~[0m[0m id                                   = "i-092844dd14fb150e8" -> (known after apply)
+      [33m~[0m[0m instance_initiated_shutdown_behavior = "stop" -> (known after apply)
+      [33m~[0m[0m instance_state                       = "running" -> (known after apply)
+      [33m~[0m[0m ipv6_address_count                   = 0 -> (known after apply)
+      [33m~[0m[0m ipv6_addresses                       = [] -> (known after apply)
+      [33m~[0m[0m monitoring                           = false -> (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [33m~[0m[0m primary_network_interface_id         = "eni-009e1da2e51da7243" -> (known after apply)
+      [33m~[0m[0m private_dns                          = "ip-10-0-22-83.ec2.internal" -> (known after apply)
+      [33m~[0m[0m private_ip                           = "10.0.22.83" -> (known after apply)
+      [33m~[0m[0m public_dns                           = "ec2-44-213-146-122.compute-1.amazonaws.com" -> (known after apply)
+      [33m~[0m[0m public_ip                            = "44.213.146.122" -> (known after apply)
+      [33m~[0m[0m secondary_private_ips                = [] -> (known after apply)
+      [33m~[0m[0m security_groups                      = [ [31m# forces replacement[0m[0m
+          [32m+[0m[0m "sg-003b53b3264108d0a",
+        ]
+        tags                                 = {
+            "CreatedBy"   = "Terraform"
+            "Environment" = "Test"
+            "Name"        = "Instance-1"
+        }
+      [33m~[0m[0m tenancy                              = "default" -> (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [33m~[0m[0m vpc_security_group_ids               = [
+          [31m-[0m[0m "sg-003b53b3264108d0a",
+        ] -> (known after apply)
+        [90m# (8 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m capacity_reservation_specification {
+          [31m-[0m[0m capacity_reservation_preference = "open" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m credit_specification {
+          [31m-[0m[0m cpu_credits = "standard" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m enclave_options {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m metadata_options {
+          [31m-[0m[0m http_endpoint               = "enabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_put_response_hop_limit = 1 [90m-> null[0m[0m
+          [31m-[0m[0m http_tokens                 = "optional" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m root_block_device {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name           = "/dev/xvda" [90m-> null[0m[0m
+          [31m-[0m[0m encrypted             = false [90m-> null[0m[0m
+          [31m-[0m[0m iops                  = 100 [90m-> null[0m[0m
+          [31m-[0m[0m tags                  = {} [90m-> null[0m[0m
+          [31m-[0m[0m throughput            = 0 [90m-> null[0m[0m
+          [31m-[0m[0m volume_id             = "vol-00e599f2c3ab7a795" [90m-> null[0m[0m
+          [31m-[0m[0m volume_size           = 8 [90m-> null[0m[0m
+          [31m-[0m[0m volume_type           = "gp2" [90m-> null[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1m  # aws_instance.instance[2][0m must be [1m[31mreplaced[0m
+[0m[31m-[0m/[32m+[0m[0m resource "aws_instance" "instance" {
+      [33m~[0m[0m arn                                  = "arn:aws:ec2:us-east-1:191805346255:instance/i-07f4fd3cc2eff0cd3" -> (known after apply)
+      [33m~[0m[0m associate_public_ip_address          = true -> (known after apply)
+      [33m~[0m[0m availability_zone                    = "us-east-1c" -> (known after apply)
+      [33m~[0m[0m cpu_core_count                       = 1 -> (known after apply)
+      [33m~[0m[0m cpu_threads_per_core                 = 1 -> (known after apply)
+      [33m~[0m[0m disable_api_termination              = false -> (known after apply)
+      [33m~[0m[0m ebs_optimized                        = false -> (known after apply)
+      [31m-[0m[0m hibernation                          = false [90m-> null[0m[0m
+      [32m+[0m[0m host_id                              = (known after apply)
+      [33m~[0m[0m id                                   = "i-07f4fd3cc2eff0cd3" -> (known after apply)
+      [33m~[0m[0m instance_initiated_shutdown_behavior = "stop" -> (known after apply)
+      [33m~[0m[0m instance_state                       = "running" -> (known after apply)
+      [33m~[0m[0m ipv6_address_count                   = 0 -> (known after apply)
+      [33m~[0m[0m ipv6_addresses                       = [] -> (known after apply)
+      [33m~[0m[0m monitoring                           = false -> (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [33m~[0m[0m primary_network_interface_id         = "eni-07bb5e887dff4b9b6" -> (known after apply)
+      [33m~[0m[0m private_dns                          = "ip-10-0-32-122.ec2.internal" -> (known after apply)
+      [33m~[0m[0m private_ip                           = "10.0.32.122" -> (known after apply)
+      [33m~[0m[0m public_dns                           = "ec2-52-207-146-61.compute-1.amazonaws.com" -> (known after apply)
+      [33m~[0m[0m public_ip                            = "52.207.146.61" -> (known after apply)
+      [33m~[0m[0m secondary_private_ips                = [] -> (known after apply)
+      [33m~[0m[0m security_groups                      = [ [31m# forces replacement[0m[0m
+          [32m+[0m[0m "sg-003b53b3264108d0a",
+        ]
+        tags                                 = {
+            "CreatedBy"   = "Terraform"
+            "Environment" = "Test"
+            "Name"        = "Instance-2"
+        }
+      [33m~[0m[0m tenancy                              = "default" -> (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [33m~[0m[0m vpc_security_group_ids               = [
+          [31m-[0m[0m "sg-003b53b3264108d0a",
+        ] -> (known after apply)
+        [90m# (8 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m capacity_reservation_specification {
+          [31m-[0m[0m capacity_reservation_preference = "open" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m credit_specification {
+          [31m-[0m[0m cpu_credits = "standard" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m enclave_options {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m metadata_options {
+          [31m-[0m[0m http_endpoint               = "enabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_put_response_hop_limit = 1 [90m-> null[0m[0m
+          [31m-[0m[0m http_tokens                 = "optional" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m root_block_device {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name           = "/dev/xvda" [90m-> null[0m[0m
+          [31m-[0m[0m encrypted             = false [90m-> null[0m[0m
+          [31m-[0m[0m iops                  = 100 [90m-> null[0m[0m
+          [31m-[0m[0m tags                  = {} [90m-> null[0m[0m
+          [31m-[0m[0m throughput            = 0 [90m-> null[0m[0m
+          [31m-[0m[0m volume_id             = "vol-06d713455a6f0b683" [90m-> null[0m[0m
+          [31m-[0m[0m volume_size           = 8 [90m-> null[0m[0m
+          [31m-[0m[0m volume_type           = "gp2" [90m-> null[0m[0m
+        }
+
+        [90m# (1 unchanged block hidden)[0m[0m
+    }
+
+[1mPlan:[0m 9 to add, 3 to change, 9 to destroy.
+[0m
+Changes to Outputs:
+  [33m~[0m[0m private_dns = {
+      [31m-[0m[0m Instance-0 = "ip-10-0-0-93.ec2.internal"
+      [31m-[0m[0m Instance-1 = "ip-10-0-22-83.ec2.internal"
+      [31m-[0m[0m Instance-2 = "ip-10-0-32-122.ec2.internal"
+    }
+  [33m~[0m[0m private_ip  = {
+      [31m-[0m[0m Instance-0 = "10.0.0.93"
+      [31m-[0m[0m Instance-1 = "10.0.22.83"
+      [31m-[0m[0m Instance-2 = "10.0.32.122"
+    }
+  [32m+[0m[0m vpc_id      = "vpc-03a6bc60f88ba8c3f"
+[0m[1maws_alb_target_group_attachment.tgattachment[0]: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457371000000002][0m[0m
+[0m[1maws_eip_association.eip_association[0]: Destroying... [id=eipassoc-0ac9df1c243943bf4][0m[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[2]: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457400600000003][0m[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[1]: Destroying... [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317202457454700000004][0m[0m
+[0m[1maws_eip_association.eip_association[2]: Destroying... [id=eipassoc-0805a926ae55a533d][0m[0m
+[0m[1maws_eip_association.eip_association[1]: Destroying... [id=eipassoc-0fcea2a22db268dc1][0m[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[0]: Destruction complete after 1s[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[1]: Destruction complete after 1s[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[2]: Destruction complete after 1s[0m
+[0m[1maws_eip_association.eip_association[1]: Destruction complete after 2s[0m
+[0m[1maws_eip_association.eip_association[0]: Destruction complete after 2s[0m
+[0m[1maws_eip_association.eip_association[2]: Destruction complete after 2s[0m
+[0m[1maws_instance.instance[2]: Destroying... [id=i-07f4fd3cc2eff0cd3][0m[0m
+[0m[1maws_instance.instance[1]: Destroying... [id=i-092844dd14fb150e8][0m[0m
+[0m[1maws_instance.instance[0]: Destroying... [id=i-0f1eb43a4fc3caf35][0m[0m
+[0m[1maws_instance.instance[1]: Still destroying... [id=i-092844dd14fb150e8, 10s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Still destroying... [id=i-0f1eb43a4fc3caf35, 10s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Still destroying... [id=i-07f4fd3cc2eff0cd3, 10s elapsed][0m[0m
+[0m[1maws_instance.instance[1]: Still destroying... [id=i-092844dd14fb150e8, 20s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Still destroying... [id=i-0f1eb43a4fc3caf35, 20s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Still destroying... [id=i-07f4fd3cc2eff0cd3, 20s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Still destroying... [id=i-07f4fd3cc2eff0cd3, 30s elapsed][0m[0m
+[0m[1maws_instance.instance[1]: Still destroying... [id=i-092844dd14fb150e8, 30s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Still destroying... [id=i-0f1eb43a4fc3caf35, 30s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Destruction complete after 30s[0m
+[0m[1maws_instance.instance[0]: Creating...[0m[0m
+[0m[1maws_instance.instance[1]: Destruction complete after 30s[0m
+[0m[1maws_instance.instance[1]: Creating...[0m[0m
+[0m[1maws_instance.instance[2]: Still destroying... [id=i-07f4fd3cc2eff0cd3, 40s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Destruction complete after 40s[0m
+[0m[1maws_instance.instance[2]: Creating...[0m[0m
+[0m[1maws_instance.instance[0]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.instance[1]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.instance[1]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.instance[1]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.instance[1]: Creation complete after 32s [id=i-029c837cf4203e21d][0m
+[0m[1maws_instance.instance[2]: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.instance[0]: Still creating... [40s elapsed][0m[0m
+[0m[1maws_instance.instance[2]: Creation complete after 32s [id=i-0d88e7a987512f2a4][0m
+[0m[1maws_instance.instance[0]: Creation complete after 43s [id=i-06ca566a261f563c4][0m
+[0m[1maws_alb_target_group_attachment.tgattachment[2]: Creating...[0m[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[0]: Creating...[0m[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[1]: Creating...[0m[0m
+[0m[1maws_eip.eip[2]: Modifying... [id=eipalloc-0923c46463fe02edf][0m[0m
+[0m[1maws_eip.eip[0]: Modifying... [id=eipalloc-0bd6921d9eb266e33][0m[0m
+[0m[1maws_eip.eip[1]: Modifying... [id=eipalloc-0c505b156fd95661b][0m[0m
+[0m[1maws_alb_target_group_attachment.tgattachment[0]: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317204421785200000001][0m
+[0m[1maws_alb_target_group_attachment.tgattachment[1]: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317204421858400000002][0m
+[0m[1maws_alb_target_group_attachment.tgattachment[2]: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:191805346255:targetgroup/TargetGroup/94e0029232be9051-20230317204422227900000003][0m
+[0m[1maws_eip.eip[1]: Modifications complete after 2s [id=eipalloc-0c505b156fd95661b][0m
+[0m[1maws_eip.eip[0]: Modifications complete after 2s [id=eipalloc-0bd6921d9eb266e33][0m
+[0m[1maws_eip.eip[2]: Modifications complete after 2s [id=eipalloc-0923c46463fe02edf][0m
+[0m[1maws_eip_association.eip_association[0]: Creating...[0m[0m
+[0m[1maws_eip_association.eip_association[2]: Creating...[0m[0m
+[0m[1maws_eip_association.eip_association[1]: Creating...[0m[0m
+[0m[1maws_eip_association.eip_association[0]: Creation complete after 1s [id=eipassoc-04b6d2588048c9b97][0m
+[0m[1maws_eip_association.eip_association[1]: Creation complete after 1s [id=eipassoc-0542ad9fe2067982b][0m
+[0m[1maws_eip_association.eip_association[2]: Creation complete after 1s [id=eipassoc-0df281328ed92d37d][0m
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mVersion constraints inside provider configuration blocks are deprecated[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on provider.tf line 14, in provider "aws":
+[33m│[0m [0m  14:   version = [4m"3.61.0"[0m[0m
+[33m│[0m [0m
+[33m│[0m [0mTerraform 0.13 and earlier allowed provider version constraints inside the provider configuration block, but that is now deprecated and will be removed in a future version of Terraform. To silence this warning, move the provider version constraint into the required_providers block.
+[33m╵[0m[0m
+[0m[1m[32m
+Apply complete! Resources: 9 added, 3 changed, 9 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0malb_id = "ALB-988768060.us-east-1.elb.amazonaws.com"
+private_dns = {
+  "Instance-0" = "ip-10-0-0-71.ec2.internal"
+  "Instance-1" = "ip-10-0-22-194.ec2.internal"
+  "Instance-2" = "ip-10-0-43-239.ec2.internal"
+}
+private_ip = {
+  "Instance-0" = "10.0.0.71"
+  "Instance-1" = "10.0.22.194"
+  "Instance-2" = "10.0.43.239"
+}
+public_dns = {
+  "Instance-0" = "ec2-3-223-81-12.compute-1.amazonaws.com"
+  "Instance-1" = "ec2-44-213-146-122.compute-1.amazonaws.com"
+  "Instance-2" = "ec2-52-207-146-61.compute-1.amazonaws.com"
+}
+public_ip = {
+  "Instance-0" = "3.223.81.12"
+  "Instance-1" = "44.213.146.122"
+  "Instance-2" = "52.207.146.61"
+}
+vpc_id = "vpc-03a6bc60f88ba8c3f"
