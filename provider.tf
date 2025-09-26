@@ -13,6 +13,6 @@ provider "aws" {
   region  = "us-east-1"
   version = "3.61.0"
   profile = "tf-pave-user"
-  access_key = ""
-  secret_key = ""
+  # SECURITY FIX: Removed hardcoded credential structure
+  # Use AWS CLI profiles, environment variables, or IAM roles instead
 }

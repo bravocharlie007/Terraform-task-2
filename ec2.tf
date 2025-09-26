@@ -14,6 +14,13 @@ resource "aws_instance" "instance" {
 #  iam_instance_profile = data.aws_iam_role.iam_role.name
   user_data = file("userdata.sh")
 
+  # SECURITY FIX: Enable IMDSv2 for enhanced metadata security
+  metadata_options {
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 1
+    http_endpoint               = "enabled"
+  }
+
   tags = {
     "Name"        = "Instance-${count.index}"
     "Environment" = "Test"

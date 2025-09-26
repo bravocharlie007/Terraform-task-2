@@ -44,7 +44,8 @@ resource "aws_security_group" "sg" {
       from_port   = ingress.value.port
       to_port     = ingress.value.port
       protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
+      # SECURITY FIX: Restrict SSH access - replace with your IP range
+      cidr_blocks = ingress.value.port == 22 ? ["10.0.0.0/8"] : ["0.0.0.0/0"]
     }
   }
   tags = {
